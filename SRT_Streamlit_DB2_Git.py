@@ -18,7 +18,7 @@ st.set_page_config(page_title="SRT Fund Analyser", layout="wide", page_icon="�
 # ══════════════════════════════════════════════════════════════════════════════
 @st.cache_data
 def load_data():
-    df = pd.read_excel("/Users/kaj/Downloads/SRT_Obligor_Data.xlsx", header=1)
+    df = pd.read_excel("SRT_Obligor_Data.xlsx", header=1)
     df = df[df["Deal ID"].notna()].copy()
     df["Deal Date"]     = pd.to_datetime(df["Deal Date"])
     df["Maturity Date"] = pd.to_datetime(df["Maturity Date"])
